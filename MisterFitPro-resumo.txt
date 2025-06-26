@@ -1,0 +1,40 @@
+Resumo do Projeto MisterFit Pro
+=============================
+
+1. CRUD de Treinos
+------------------
+- Backend:
+  - Rotas protegidas para criar, listar, editar e excluir treinos (`/api/workout-plans`).
+  - Treinos podem ter imagem de capa (`image_url`), associados a um personal (`personal_id`) e opcionalmente a um aluno (`aluno_id`).
+  - Exercícios são associados a cada treino via tabela `workout_exercises`, com campos como séries, repetições, descanso, observações e vídeo específico (`video_url`).
+  - Exercícios são criados automaticamente se não existirem.
+- Frontend:
+  - Listagem, criação, edição e exclusão de treinos funcionando.
+  - Exibe imagem de capa do treino e vídeos dos exercícios.
+  - Edição e exclusão funcionam corretamente.
+
+2. CRUD de Dietas
+-----------------
+- Backend:
+  - Rotas protegidas para criar, listar, editar e excluir dietas (`/api/diet-plans`).
+  - Dietas têm campos: `title`, `description`, `image_url`, `personal_id`, `aluno_id`.
+  - Associação de personal e aluno por email.
+  - (Refeições ainda não implementadas.)
+- Frontend:
+  - Formulário de dieta ajustado para enviar os campos corretos (`title`, `description`, etc).
+  - Integração com backend para criar, editar e excluir dietas.
+  - Imagem de capa da dieta suportada.
+
+3. Padrão de Integração
+-----------------------
+- Todos os endpoints protegidos usam token JWT no header Authorization.
+- Campos de nome de treino/dieta padronizados para `title` no backend.
+- Campos de imagem padronizados para `image_url`.
+
+4. Próximos Passos Sugeridos
+----------------------------
+- Implementar CRUD de refeições associadas à dieta.
+- Melhorar exibição de detalhes de dietas e treinos.
+- Adicionar filtros, busca, e outras funcionalidades avançadas conforme necessário.
+
+Dica: No próximo chat, cole este resumo e diga: "Continue a partir deste contexto." 

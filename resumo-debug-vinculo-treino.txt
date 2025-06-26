@@ -1,0 +1,31 @@
+Resumo do Debug - Vínculo de Treinos/Dietas ao Aluno
+====================================================
+
+1. **Objetivo:**
+   - Permitir vincular treinos e dietas já cadastrados a um aluno, via modal na página de detalhes do aluno.
+
+2. **Backend:**
+   - Corrigido o nome das tabelas para `workouts` e `diets`.
+   - Corrigidas as rotas para `/api/workouts/available` e `/api/diets/available`.
+   - Corrigidos os métodos de vínculo para atualizar o campo `student_id` nas tabelas corretas.
+
+3. **Frontend:**
+   - Corrigidos os endpoints no `apiService` para usar `/api/workouts/available` e `/api/diets/available`.
+   - Implementado modal de vínculo de treino/dieta, que busca os disponíveis e permite selecionar e vincular ao aluno.
+   - Adicionados vários logs de depuração para identificar o fluxo de renderização e resposta da API.
+
+4. **Situação atual:**
+   - Existem treinos cadastrados na tabela `workouts`.
+   - O modal de vínculo de treino **não exibe nenhum treino** e os logs personalizados do React **não aparecem no console**.
+   - Isso indica que o componente `StudentDetails.jsx` **não está sendo montado/renderizado** ou que há erro de rota/importação.
+   - O console mostra apenas avisos do Radix UI, mas nenhum log do código do projeto.
+
+5. **Próximos passos sugeridos:**
+   - Confirmar se está realmente na página do aluno (`/student/:id`).
+   - Garantir que o console do navegador está mostrando todos os logs ("Default levels" marcado).
+   - Adicionar um log global no topo do arquivo `StudentDetails.jsx` para garantir que o arquivo está sendo carregado.
+   - Verificar possíveis erros de importação, rota ou autenticação que impeçam a montagem do componente.
+
+---
+
+**Este resumo serve como ponto de partida para um novo chat de debug.** 
