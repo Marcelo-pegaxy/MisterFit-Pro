@@ -19,8 +19,7 @@ app.use(helmet());
 // Configuração do CORS
 // Em desenvolvimento, permite múltiplas portas do localhost. Em produção, use uma lista restrita.
 const whitelist = [
-  'https://seu-dominio-de-producao.com',
-  'https://mister-fit-pro.vercel.app'
+    'https://mister-fit-pro.vercel.app'
 ];
 if (process.env.NODE_ENV !== 'production') {
   whitelist.push('http://localhost:3000', 'http://127.0.0.1:3000');
