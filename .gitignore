@@ -17,6 +17,7 @@ build/
 
 # Backend specific
 backend/.env
+backend/config.env
 backend/node_modules/
 backend/logs/
 backend/uploads/
