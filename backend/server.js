@@ -39,6 +39,7 @@ app.use(cors({
   },
   credentials: true
 }));
+app.options('*', cors());
 
 // Rate limiting
 if (process.env.NODE_ENV === 'production') {
