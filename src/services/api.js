@@ -1,4 +1,7 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+import { getApiUrl } from '../config/env.js';
+
+// URL da API baseada no ambiente
+const API_BASE_URL = getApiUrl();
 
 class ApiService {
   constructor() {

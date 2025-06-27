@@ -1,7 +1,10 @@
 // Configurações de ambiente
 export const config = {
-  // URL da API
-  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:3001/api',
+  // URL da API - Mude esta URL após o deploy no Railway
+  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  
+  // URL da API em produção (será substituída após deploy)
+  // API_URL: 'https://misterfit-backend-production.up.railway.app/api',
   
   // Configurações de pagamento
   STRIPE_PUBLIC_KEY: import.meta.env.VITE_STRIPE_PUBLIC_KEY || 'pk_test_...',
@@ -32,4 +35,13 @@ export const isDevelopment = () => {
 // Função para verificar se está em produção
 export const isProduction = () => {
   return import.meta.env.PROD;
+};
+
+// Função para obter a URL da API baseada no ambiente
+export const getApiUrl = () => {
+  if (isProduction()) {
+    // Em produção, use a URL do Railway
+    return 'https://misterfit-backend-production.up.railway.app/api';
+  }
+  return config.API_URL;
 }; 
