@@ -1,7 +1,7 @@
 // Configurações de ambiente
 export const config = {
   // URL da API - Mude esta URL após o deploy no Railway
-  API_URL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  API_URL: 'https://misterfit-pro-production.up.railway.app/api',
   
   // URL da API em produção (será substituída após deploy)
   // API_URL: 'https://misterfit-backend-production.up.railway.app/api',
